@@ -1,0 +1,59 @@
+﻿#login-div {
+    padding: 2% 4%;
+    border: 2px solid #ccc;
+    border-collapse: collapse;
+}
+
+label{
+    font-family: Arial; 
+    font-size: 1.0em;
+    font-kerning:normal;
+    font-style:normal;
+    font-weight:normal;
+}
+h2 {
+    left: 30%;
+    top: 20%;
+    text-align: center;
+    font-style: normal;
+    font-size: 2.5em;
+}
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+    input[type=submit]:hover {
+        box-shadow: 0 5px 7px 0 rgba(0,0,0,0.24),0 7px 20px 0 rgba(0,0,0,0.19);
+    }
+
+    input[type=submit]:active {
+        background-color: lightgrey;
+        box-shadow: 0 1px #666;
+        transform: translateY(4px);
+    }
+  
+
+#button1 {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.half {
+    width: auto;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}

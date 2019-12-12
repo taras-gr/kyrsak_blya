@@ -1,0 +1,45 @@
+﻿.developers{
+
+}
+
+.developers .developer{
+    margin-bottom: 3rem;
+    border-radius: 2rem;
+    border: 2px solid #101010;
+    padding: 1rem;
+    align-items: center;
+}
+
+    .developers .developer .developer__img img{
+        height: 10rem;
+        width: 10rem;
+        border-radius: 50%;
+    }
+    .developers .developer .developer__description{
+        font-size: 1.2em;
+    }
+    .developers .developer .developer__name {
+        font-size: 2em;
+    }
+    .developers .developer .developer__links {
+        display: flex;
+        padding-bottom: 2rem;
+    }
+        .developers .developer .developer__links div {
+            width: 4rem;
+            height: 4rem;
+        }
+
+            .developers .developer .developer__links div img {
+                border-radius: 3rem;
+                border: 2px solid white;
+                background-color: white;
+                opacity: 0.5;
+                width: 4rem;
+                height: 4rem;
+                align-items: center;
+            }
+
+                .developers .developer .developer__links div img:hover {
+                    opacity: 1;
+                }

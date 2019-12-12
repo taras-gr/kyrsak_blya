@@ -1,0 +1,45 @@
+﻿@model Store.ViewModels.LoginView
+
+@{
+    ViewData["Title"] = "Login";
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<link rel="stylesheet" href="~/css/cart.css"/>
+<link rel="stylesheet" href="~/css/footer.css"/>
+<link rel="stylesheet" href="~/css/Login.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<div class="row justify-content-center">
+    <div class="col col-lg-7 my-3">
+        <div id="login-div">
+            <h2>Login</h2>
+
+            <form method="post" asp-controller="Account" asp-action="Login">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div>
+                    <span asp-validation-for="Email"></span>
+                    <input type="email" asp-for="Email" placeholder="Email">
+                    <span asp-validation-for="Password"></span>
+                    <input asp-for="Password" placeholder="Password">
+                </div>
+                <div>
+                    <span asp-validation-for="RememberMe"></span>
+                    <input asp-for="RememberMe" type="checkbox" class=" half left">
+                    <label class="half left">Remember me</label>
+                </div>
+
+                <div>
+                    <input id="button1" type="submit" value="Log in" />
+                </div>
+                <div class="row justify-content-between">
+                    <div class="col-12 col-lg-6">
+                        <p><span>Are you not registered ? : </span> <a asp-action="Register" asp-controller="Account">Sign In</a></p>
+                    </div>
+                    <div class="col-12 col-lg-6 text-lg-right">
+                        <a  asp-action="ForgotPassword" asp-controller="Account">Forgot password?</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

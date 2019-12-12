@@ -1,0 +1,157 @@
+﻿img {
+    height: 100%;
+    max-width: 100%;
+}
+
+.content {
+    margin-top: 50px;
+}
+
+.product {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #c0c0c0;
+    height: 390px;
+    overflow: hidden;
+    padding: 25px 15px;
+    position: relative;
+    text-align: center;
+    transition: all 0.5s ease 0s;
+    margin-bottom: 20px;
+}
+
+    .product:hover {
+        box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
+    }
+
+.product-img {
+    height: 60%;
+}
+
+.product-title a {
+    color: #000;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.product-desc {
+    max-height: 50px;
+    overflow: hidden;
+}
+
+.product-price {
+    bottom: 15px;
+
+    width: 100%;
+    color: #d51e08;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.product-page .image img {
+    height: 70%;
+    width: 70%;
+}
+
+.product-page .price p {
+    font-size: 18px;
+    display: inline;
+    padding-right: 20px;
+}
+
+.product-page .btn-green {
+    background-color: #00ff19;
+    font-weight: 600;
+    color: white;
+}
+
+.black-hr {
+    border-top: 1px solid #c4bfbf;
+}
+
+.rate {
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+}
+
+    .rate .star {
+        margin: 0;
+        padding: .2em;
+        display: inline-block;
+        font-size: 30px;
+        cursor: pointer;
+        color: #fff;
+        text-shadow: 0 1px #000, 0 -1px #000, 1px 0 #000, -1px 0 #000;
+    }
+
+.star:visited {
+    color: aqua;
+}
+
+.rate .star:before {
+    content: '\2605';
+}
+
+.rate .star:hover ~ .star {
+    color: #fff;
+}
+
+.good-link {
+    color: black;
+}
+
+    .good-link:hover {
+        text-decoration: none;
+    }
+
+
+.cart-goods {
+    margin-top: 4rem;
+}
+
+.cart-good-image {
+    height: 8rem;
+    width: 8rem;
+}
+
+.cart-item {
+    font-size: 1.2vw;
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+    .cart-item {
+        font-size: 3vw;
+    }
+
+    .cart-good-image {
+        height: 8rem;
+        width: 8rem;
+    }
+}
+
+.pagination {
+    position: relative;
+}
+    .pagination li a {
+        padding: 0 0.5rem;
+        color: black;
+
+    }
+        .pagination .active a {
+            color: white;
+
+        }
+    .pagination li {
+        width: 2.2rem;
+        height: 2.2rem;
+        background-color: white;
+        border: 1px solid lightgray;
+        border-radius: 4px;
+        text-align: center; 
+    }
+
+    .pagination .active {
+        background-color: #0069D9;
+    }

@@ -1,0 +1,33 @@
+﻿@model DAL.Models.Customer
+@{
+    ViewBag.Title = "Order's customer";
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<link rel="stylesheet" href="~/css/cart.css"/>
+<link rel="stylesheet" href="~/css/footer.css"/>
+<div class="input-group row mt-2">
+    <div class=" col">
+        <h2 class="">Customer of @ViewBag.OrderId order : </h2>
+    </div>
+    <div class="col">
+        <span class="input-group-btn">
+            <a class="btn btn-sm btn-primary" asp-controller="Manager" asp-action="Index" style="float: right;">Back to orders</a>
+        </span>
+    </div>
+</div>
+
+    <table class="table table-hover">
+        <tr>
+            <th>First Name</th>
+            <th>Second Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td>@Model.FirstName</td>
+            <td>@Model.SecondName</td>
+            <td>@Model.Phone</td>
+            <td>@Model.Email</td>
+        </tr>
+    </table>

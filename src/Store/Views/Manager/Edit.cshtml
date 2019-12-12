@@ -1,0 +1,50 @@
+﻿@model Store.ViewModels.EditOrderView
+@{
+    ViewBag.Title = "Edit order";
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<link rel="stylesheet" href="~/css/cart.css"/>
+<link rel="stylesheet" href="~/css/footer.css"/>
+<form asp-action="Edit" asp-controller="Manager">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Id" class="control-label">Number of order</label>
+        <input type="text" asp-for="Id" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label asp-for="CustomerName" class="control-label">Customer name</label>
+        <input type="text" asp-for="CustomerName" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label asp-for="CustomerSurname" class="control-label">Customer surname</label>
+        <input type="text" asp-for="CustomerSurname" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label asp-for="CustomerEmail" class="control-label">Customer email</label>
+        <input type="text" asp-for="CustomerEmail" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label asp-for="EndPointCity" class="control-label">City</label>
+        <input type="text" asp-for="EndPointCity" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="EndPointStreet" class="control-label">Street</label>
+        <input type="text" asp-for="EndPointStreet" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="checkbox" name="SendEmail" asp-for="SendEmail" />
+        <label asp-for="SendEmail" class="control-label">Send email</label>
+    </div>
+    <div class="form-group">
+        <label asp-for="OrderDate" class="control-label">Date of order</label>
+        <input type="date" asp-for="OrderDate" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <label asp-for="Status" class="control-label">Status</label>
+        <input type="text" asp-for="Status" class="form-control" readonly />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" style="margin: 2% 35%; width: 30%;" />
+    </div>
+</form>

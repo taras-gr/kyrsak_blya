@@ -1,0 +1,27 @@
+﻿<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<link rel="stylesheet" href="~/css/cart.css"/>
+<link rel="stylesheet" href="~/css/footer.css"/>
+<div class="container">
+    <h2>Admin panel</h2>
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a asp-area="" asp-controller="Customer" asp-action="Index">Customers</a>
+        </li>
+        <li class="nav-item">
+            <a asp-area="" asp-controller="Good" asp-action="Index">Goods</a>
+        </li>
+        <li class="nav-item">
+            <a asp-area="" asp-controller="Storage" asp-action="Index">Storages</a>
+        </li>
+        <li class="nav-item">
+            <a asp-area="" asp-controller="Producer" asp-action="Index">Producers</a>
+        </li>
+        <li class="nav-item">
+            <a asp-area="" asp-controller="Order" asp-action="Index">Orders</a>
+        </li>
+        <li class="nav-item">
+            <a asp-area="" asp-controller="Review" asp-action="Index">Confirm reviews</a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,42 @@
+﻿@model IEnumerable<DAL.Models.Good>
+@{
+    ViewBag.Title = "Good list";
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<link rel="stylesheet" href="~/css/cart.css"/>
+<link rel="stylesheet" href="~/css/footer.css"/>
+<div class="input-group row mt-2">
+    <div class=" col">
+        <h2 class="">Goods in @ViewBag.OrderId order : </h2>
+    </div>
+    <div class="col">
+        <span class="input-group-btn">
+            <a class="btn btn-sm btn-primary" asp-controller="Manager" asp-action="Index" style="float: right;">Back to orders</a>
+        </span>
+    </div>
+</div>
+
+    <table class="table table-hover">
+        <tr>
+            <th>Name</th>
+            <th>Year of goods production</th>
+            <th>The warranty period</th>
+            <th>Producer name</th>
+            <th>Price</th>
+            <th>Type</th>
+            <th>Amount</th>
+        </tr>
+        @foreach (var good in Model)
+        {
+            <tr>
+                <td>@good.Name</td>
+                <td>@good.YearOfManufacture</td>
+                <td>@good.WarrantyTerm months</td>
+                <td>@good.Producer.Name</td>
+                <td>@good.Price</td>
+                <td>@good.Type</td>
+                <td>@good.Count</td>
+            </tr>
+        }
+    </table>

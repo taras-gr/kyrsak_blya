@@ -1,0 +1,129 @@
+﻿@model Store.ViewModels.IndexViewModel
+@addTagHelper "*, Store"
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<link rel="stylesheet" href="~/css/mainPage.css" />
+<link rel="stylesheet" href="~/css/Scrollbar.css" />
+<link rel="stylesheet" href="~/css/footer.css" />
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<link rel="stylesheet" href="~/css/cart.css"/>
+
+<div class="container content">
+    <div class="row justify-content-md-center">
+        <div class="col-lg-2">
+            <div class="card example-1 scrollbar-ripe-malinka">
+                <div class="card-body">
+                    <p class="product-title">
+                        <a asp-area="" asp-controller="Home" asp-action="TypeSearch" asp-route-goodType="All">Всі</a>
+                    </p>
+                    @foreach (var type in Model.FilterModel.Types)
+                    {
+                        @if (type == "All")
+                        {
+                            continue;
+                        }
+
+                        <p class="product-title">
+                            <a asp-area="" asp-controller="Home" asp-action="TypeSearch" asp-route-goodType="@type">@type</a>
+                        </p>
+                    }
+                </div>
+            </div>
+            <div class="card-body mt-3 p-lg-0">
+                <form asp-action="Filter" asp-controller="Home">
+                    <div class="form-group">
+                        <label asp-for="FilterModel.GoodView.Name" class="control-label">Назва товару</label>
+                        <input type="text" asp-for="FilterModel.GoodView.Name" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FilterModel.GoodView.ProducerName" class="control-label">Назва виробника</label>
+                        <input type="text" asp-for="FilterModel.GoodView.ProducerName" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FilterModel.Types">Тип</label>
+                        <select class="form-control" name="typeSelect">
+                            @foreach (var type in Model.FilterModel.Types)
+                            {
+                                @if (type == Model.FilterModel.ChoosenType)
+                                {
+                                    <option selected>@type</option>
+                                }
+                                else
+                                {
+                                    <option>@type</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FilterModel.GoodView.YearOfManufacture" class="control-label">Рік виробництва</label>
+                        <input type="number" asp-for="FilterModel.GoodView.YearOfManufacture" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FilterModel.GoodView.StartPrice" class="control-label">Ціна</label>
+                        <input type="number" asp-for="FilterModel.GoodView.StartPrice" placeholder="Від" class="form-control" />
+                        <input type="number" asp-for="FilterModel.GoodView.EndPrice" placeholder="До" class="form-control" style="margin-top: 1%;" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="FilterModel.GoodView.WarrantyTerm" class="control-label">Гарантія на елемент одягу</label>
+                        <input type="number" asp-for="FilterModel.GoodView.WarrantyTerm" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Фільтр" class="btn btn-primary" style="margin-left: 20%; width: 60%;" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-10 mr-auto products">
+            <form method="post" asp-action="Sort" asp-controller="Home">
+                <div class="form-group">
+                    <div class="input-group mb-3">
+                        <select class="form-control" name="sortSelect">
+                            @foreach (var option in Model.FilterModel.AllSort)
+                            {
+                                @if (option.Key == Model.FilterModel.SortBy.ToString())
+                                {
+                                    <option value="@option.Key" selected>@option.Value</option>
+                                }
+                                else
+                                {
+                                    <option value="@option.Key">@option.Value</option>
+                                }
+                            }
+                        </select>
+                        <div class="input-group-append">
+                            <button class="btn btn-warning" type="submit" style="color: white;">Сортувати</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="row">
+                @foreach (var good in Model.FilterModel.Goods)
+                {
+                    <div class="col-md-4">
+                        <a asp-area="" asp-controller="GoodPage" asp-action="ShowGood" asp-route-goodId="@good.Id" class="good-link">
+                            <div class="product p-1">
+                                <div class="product-img">
+                                    <img src="@good.PhotoUrl" alt="">
+                                </div>
+                                <p class="product-title">
+                                    @good.Name
+                                </p>
+                                <p class="product-desc">@good.Specification</p>
+                                <p class="product-price">Price: @good.Price</p>
+                            </div>
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row text-right">
+    <div class="col">
+        <page-link page-model="Model.PageViewModel" page-action="Index" style="float: right;"></page-link>
+    </div>
+</div>

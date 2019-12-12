@@ -1,0 +1,34 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model Store.ViewModels.EditProducerView
+@{
+    ViewBag.Title = "Edit producer";
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<link rel="stylesheet" href="~/css/cart.css"/>
+<link rel="stylesheet" href="~/css/footer.css"/>
+<form asp-action="Edit" asp-controller="Producer">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <input type="hidden" asp-for="Id" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Name" class="control-label">Name</label>
+        <input type="text" asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Phone" class="control-label">Phone</label>
+        <input type="text" asp-for="Phone" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Email" class="control-label">Email</label>
+        <input type="text" asp-for="Email" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="WebSite" class="control-label">WebSite</label>
+        <input type="text" asp-for="WebSite" class="form-control" />
+    </div> 
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" style="margin: 2% 35%; width: 30%;" />
+    </div>
+</form>

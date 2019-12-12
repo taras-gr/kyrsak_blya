@@ -1,0 +1,55 @@
+﻿body{
+    padding-bottom: 0;
+}
+html, body {
+    height: 100%;
+}
+
+.body-content {
+    min-height: 100%;
+    height: auto !important; 
+    height: 100%;
+    margin: 0 auto; 
+}
+.navbar {
+    background-color: #101010;
+}
+footer {
+    position: relative;
+    background-color: #101010;
+}
+
+    footer .footer__link, .footer__text {
+        font-size: 18px;
+        margin-bottom: 0;
+        color: #7f7f7f;
+    }
+        footer .footer__link:hover {
+            text-decoration-line: none;
+            color: white;
+        }
+    footer .icons {
+        display: flex;
+    }
+
+        footer .icons div {
+            margin: 0;
+            margin-top: -0.3rem;
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+footer .icons .nav-link {
+    padding: 0.2rem;
+}
+            footer .icons div img {
+                border-radius: 2rem;
+                border: 2px solid white;
+                background-color: white;
+                opacity: 0.5;
+                width: 2rem;
+                height: 2rem;
+            }
+
+                footer .icons div img:hover {
+                   opacity: 1;
+                }

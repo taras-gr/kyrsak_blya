@@ -1,0 +1,34 @@
+﻿@model IEnumerable<DAL.Models.Order>
+@{
+    ViewBag.Title = "Goods list";
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<link rel="stylesheet" href="~/css/cart.css"/>
+<link rel="stylesheet" href="~/css/footer.css"/>
+<div class="input-group row mt-2">
+    <div class=" col">
+        <h2 class="">@ViewBag.Previous has next orders : </h2>
+    </div>
+    <div class="col">
+        <span class="input-group-btn">
+            <a class="btn btn-sm btn-primary" asp-controller="Customer" asp-action="Index" style="float: right;">Back</a>
+        </span>
+    </div>
+</div>
+
+    <table class="table table-hover">
+        <tr>
+            <th>Id</th>
+            <th>Date of order</th>
+            <th>Status</th>
+        </tr>
+        @foreach (var order in Model)
+        {
+            <tr>
+                <td>@order.Id</td>
+                <td>@order.OrderDate</td>
+                <td>@order.OrderStatus</td>
+            </tr>
+        }
+    </table>

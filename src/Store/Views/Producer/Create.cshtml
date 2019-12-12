@@ -1,0 +1,30 @@
+﻿@model Store.ViewModels.CreateProducerView
+@{
+    ViewBag.Title = "New producer";
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<link rel="stylesheet" href="~/css/cart.css"/>
+<link rel="stylesheet" href="~/css/footer.css"/>
+<form asp-action="Create" asp-controller="Producer">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Name" class="control-label">Name</label>
+        <input type="text" asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Phone" class="control-label">Phone</label>
+        <input type="text" asp-for="Phone" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Email" class="control-label">Email</label>
+        <input type="email" asp-for="Email" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="WebSite" class="control-label">WebSite</label>
+        <input type="text" asp-for="WebSite" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Add" class="btn btn-success" style="margin: 2% 35%; width: 30%;" />
+    </div>
+</form>

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<DAL.Models.Order>
+@{
+    ViewBag.Title = "Order history";
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<link rel="stylesheet" href="~/css/cart.css"/>
+<link rel="stylesheet" href="~/css/footer.css"/>
+
+<table class="table table-hover" style="margin-top: 4%;">
+    <tr>
+        <th>Number of order</th>
+        <th>Date of order</th>
+        <th>Goods</th>
+        <th>City</th>
+        <th>Street</th>
+        <th>Status</th>
+        <th>Price</th>
+        <th></th>
+        <th></th>
+    </tr>
+    @foreach (var order in Model)
+    {
+    <tr>
+        <td>@order.Id</td>
+        <td>@order.OrderDate</td>
+        <td><a asp-action="ShowGoods" asp-route-id="@order.Id">Goods</a></td>
+        <td>@order.EndPointCity</td>
+        <td>@order.EndPointStreet</td>
+        <td>@order.OrderStatus</td>
+        <td>@order.CommonPrice</td>
+        <td>
+            <form asp-controller="User" asp-action="CancelOrder" asp-route-id="@order.Id">
+                @if (order.OrderStatus == DAL.Classes.OrderStatus.Processing ||
+                 order.OrderStatus == DAL.Classes.OrderStatus.Ordered)
+                {
+                    <input value="Cancel" class="btn btn-primary" type="submit" />
+                }
+            </form>
+        </td>
+        <td>
+            <form asp-controller="User" asp-action="DeleteOrder" asp-route-id="@order.Id">
+                @if (order.OrderStatus == DAL.Classes.OrderStatus.Ordered)
+                {
+                    <input value="Delete" class="btn btn-danger" type="submit" />
+                }
+            </form>
+        </td>
+    </tr>
+    }
+</table>
+

@@ -1,0 +1,24 @@
+﻿.cart img {
+    height: 1.5rem;
+    width: 1.5rem;
+    opacity: 0.5;
+}
+
+.cart img:hover{
+    opacity:1;
+}
+
+
+.number-cart {
+    position: relative;
+    margin-top: 2rem;
+    border-radius: 50%;
+    color: white;
+    background-color: red;
+}
+
+.transparent-input {
+    border: none;
+    border-color: transparent;
+    background-color: transparent;
+}

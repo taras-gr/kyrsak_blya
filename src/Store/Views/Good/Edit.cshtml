@@ -1,0 +1,85 @@
+﻿@model Store.ViewModels.EditGoodView
+@{
+    ViewBag.Title = "Edit good";
+}
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<link rel="stylesheet" href="~/css/cart.css" />
+<link rel="stylesheet" href="~/css/footer.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+
+<form asp-action="Edit" asp-controller="Good">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Name" class="control-label">Name</label>
+        <input type="text" asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Specification" class="control-label">Specification</label>
+        <input type="text" asp-for="Specification" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="PhotoUrl" class="control-label">Photo Url</label>
+        <input type="text" asp-for="PhotoUrl" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="YearOfManufacture" class="control-label">Year of manufacture</label>
+        <input type="number" asp-for="YearOfManufacture" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="WarrantyTerm" class="control-label">WarrantyTerm</label>
+        <input type="number" asp-for="WarrantyTerm" class="form-control" />
+    </div>
+    <div class="form-group">
+        <ul style="list-style-type: none; margin-left: -3%;">
+            <li class="dropdown">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle">Storages<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    @foreach (Storage storage in Model.AllStorages)
+                    {
+                        <li style="margin-left: 4%" class="dropdown-item">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="storagesParameter" value="@storage.Id"
+                                           @(Model.Storages.Contains(storage) ? "checked=\"checked\"" : "") />
+                                    @string.Join(", ", @storage.City, @storage.Street)
+                                </label>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="form-group">
+        <label asp-for="Producers">Producer</label>
+        <select class="form-control" name="producerSelect">
+            @foreach (var producer in Model.Producers)
+            {
+                if (producer.Name == Model.Producer.Name)
+                {
+                    <option selected>@producer.Name</option>
+                }
+                else
+                {
+                    <option>@producer.Name</option>
+                }
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="Price" class="control-label">Price</label>
+        <input type="number" asp-for="Price" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Type" class="control-label">Type</label>
+        <input type="text" asp-for="Type" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Count" class="control-label">Amount</label>
+        <input type="number" asp-for="Count" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" style="margin: 2% 35%; width: 30%;" />
+    </div>
+</form>
