@@ -8,11 +8,11 @@
 <link rel="stylesheet" href="~/css/footer.css"/>
 <form asp-action="ChangeStatus" asp-controller="Manager">
     <div class="form-group" style="margin-top: 2%;">
-        <label asp-for="Id" class="control-label">Number of order</label>
+        <label asp-for="Id" class="control-label">Номер замовлення</label>
         <input type="number" asp-for="Id" class="form-control" readonly />
     </div>
     <div class="form-group">
-        <label asp-for="OrderStatuses">Status</label>
+        <label asp-for="OrderStatuses">Статус</label>
         <select class="form-control" name="orderStatus">
             @foreach (var status in Model.OrderStatuses)
             {
@@ -28,10 +28,6 @@
         </select>
     </div>
     <div class="form-group">
-        <input type="checkbox" name="SendEmail" asp-for="SendEmail" />
-        <label asp-for="SendEmail" class="control-label">Send email</label>
-    </div>
-    <div class="form-group">
-        <input type="submit" value="Change" class="btn btn-primary" style="margin: 2% 35%; width: 30%;" />
+        <input type="submit" value="Змінити" class="btn btn-primary" style="margin: 2% 35%; width: 30%;" />
     </div>
 </form>

@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "CustomerSettingPage";
 }
-<h2>Settings page</h2>
+<h2>Користувацькі налаштування</h2>
 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
 <link rel="stylesheet" href="~/css/site.css" />
 <link rel="stylesheet" href="~/css/cart.css"/>
@@ -14,25 +14,25 @@
         <input type="hidden" asp-for="Id" />
     </div>
     <div class="form-group">
-        <label asp-for="FirstName" class="control-label">FirstName</label>
+        <label asp-for="FirstName" class="control-label">Ім'я</label>
         <input type="text" asp-for="FirstName" class="form-control" />
     </div>
     <div class="form-group">
-        <label asp-for="SecondName" class="control-label">SecondName</label>
+        <label asp-for="SecondName" class="control-label">Прізвище</label>
         <input type="text" asp-for="SecondName" class="form-control" />
     </div>
     <div class="form-group">
-        <label asp-for="Phone" class="control-label">Phone</label>
+        <label asp-for="Phone" class="control-label">Телефон</label>
         <input type="text" asp-for="Phone" class="form-control" />
     </div>
     <div class="form-group">
-        <label asp-for="Email" class="control-label">Email</label>
+        <label asp-for="Email" class="control-label">Емейл</label>
         <input type="text" asp-for="Email" class="form-control" readonly />
     </div>
     <div class="form-group">
-        <a asp-action="ForgotPassword" asp-controller="Account">Change password</a>
+        <a asp-action="ForgotPassword" asp-controller="Account">Змінити пароль</a>
     </div>
     <div class="form-group">
-        <input type="submit" value="Save" class="btn btn-primary" style="margin: 2% 35%; width: 30%;" />
+        <input type="submit" value="Зберегти" class="btn btn-primary" style="margin: 2% 35%; width: 30%;" />
     </div>
 </form>

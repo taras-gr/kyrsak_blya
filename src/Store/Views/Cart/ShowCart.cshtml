@@ -15,7 +15,7 @@
     <div class="cart-goods">
         <div class="row text-center">
             <div class="col">
-                <h3>Your cart is empty</h3>
+                <h3>Кошик порожній</h3>
             </div>
             
         </div>
@@ -25,7 +25,7 @@ else
 {
     <div class="row text-center">
         <div class="col">
-            <h3>Your Cart</h3>
+            <h3>Твій кошик</h3>
         </div>
     </div>
     <form asp-action="ConfirmGoods" asp-controller="Cart">
@@ -39,8 +39,8 @@ else
                         </a>
                     </div>
                     <div class="col-lg-4 col-12">
-                        <p>Name : <a asp-area="" asp-controller="GoodPage" asp-action="ShowGood" asp-route-goodId="@part.Good.Id">@part.Good.Name</a></p>
-                        <p>Price : @part.Good.Price</p>
+                        <p>Назва : <a asp-area="" asp-controller="GoodPage" asp-action="ShowGood" asp-route-goodId="@part.Good.Id">@part.Good.Name</a></p>
+                        <p>Ціна : @part.Good.Price</p>
                     </div>
                     <div class="col-lg-2 col-12">
                         <a class="btn btn-sm btn-warning" onclick="CountDecrease(@part.Good.Id, @part.Good.Price)">-</a>
@@ -50,7 +50,7 @@ else
                     </div>
                     <div class="col-lg-2 col-12">
                         <a class="btn btn-sm btn-danger" method="post" asp-controller="Cart" asp-action="RemoveFromCart" asp-route-id="@part.Good.Id">
-                            Delete
+                            Видалити
                         </a>
                     </div>
 
@@ -68,7 +68,7 @@ else
             </div>
         </div>
         <div>
-            <input type="submit" class="btn btn btn-success center-button" value="Confirm">
+            <input type="submit" class="btn btn btn-success center-button" value="Підтвердити">
         </div>
     </form>
 }

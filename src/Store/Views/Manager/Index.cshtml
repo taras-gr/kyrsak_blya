@@ -6,18 +6,18 @@
 <link rel="stylesheet" href="~/css/site.css" />
 <link rel="stylesheet" href="~/css/cart.css"/>
 <link rel="stylesheet" href="~/css/footer.css"/>
-<a class="btn btn-sm btn-primary" style="margin: 2% 0%;" asp-action="Find">Find order</a>
+<a class="btn btn-sm btn-primary" style="margin: 2% 0%;" asp-action="Find">Знайти замовлення</a>
 
 <table class="table table-hover">
     <tr>
-        <th>Number of order</th>
-        <th>Date of order</th>
-        <th>Goods</th>
-        <th>Customer</th>
-        <th>City</th>
-        <th>Street</th>
-        <th>Status</th>
-        <th>Price</th>
+        <th>Номер замовлення</th>
+        <th>Дата замовлення</th>
+        <th>Клієнт</th>
+        <th>Товари</th>
+        <th>Місто</th>
+        <th>Вулиця</th>
+        <th>Статус</th>
+        <th>Ціна</th>
         <th></th>
     </tr>
     @foreach (var order in Model)
@@ -25,15 +25,15 @@
         <tr>
             <td>@order.Id</td>
             <td>@order.OrderDate</td>
-            <td><a asp-action="ShowCustomer" asp-route-id="@order.Id">Customer</a></td>
-            <td><a asp-action="ShowGoods" asp-route-id="@order.Id">Goods</a></td>
+            <td><a asp-action="ShowCustomer" asp-route-id="@order.Id">Клієнт</a></td>
+            <td><a asp-action="ShowGoods" asp-route-id="@order.Id">Товари</a></td>
             <td>@order.EndPointCity</td>
             <td>@order.EndPointStreet</td>
             <td>@order.OrderStatus</td>
             <td>@order.CommonPrice</td>
             <td>
-                <a class="btn btn-sm btn-primary" asp-action="Edit" asp-route-id="@order.Id">Edit</a>
-                <a class="btn btn-sm btn-warning" asp-action="ChangeStatus" asp-route-id="@order.Id">Change status</a>
+                <a class="btn btn-sm btn-primary" asp-action="Edit" asp-route-id="@order.Id">Редагувати</a>
+                <a class="btn btn-sm btn-warning" asp-action="ChangeStatus" asp-route-id="@order.Id">Змінити статус</a>
             </td>
         </tr>
     }

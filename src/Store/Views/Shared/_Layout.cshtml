@@ -21,7 +21,7 @@
 </head>
 <body class="pt-0">
     <nav class="navbar navbar-expand-lg my-0 mx-0 text-uppercase navbar-dark text-capitalize">
-        <a asp-area="" asp-controller="Home" asp-action="TypeSearch" asp-route-goodType="All" class="navbar-brand">PurchLand</a>
+        <a asp-area="" asp-controller="Home" asp-action="TypeSearch" asp-route-goodType="All" class="navbar-brand">Одягальник</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -33,15 +33,15 @@
 
                 @if (User.IsInRole("admin"))
                 {
-                    <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Admin" asp-action="Index">Admin panel</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Admin" asp-action="Index">Адінпанель</a></li>
                 }
                 @if (User.IsInRole("manager"))
                 {
-                    <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Manager" asp-action="Index">Manage orders</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Manager" asp-action="Index">Керувати замовленнями</a></li>
                 }
                 @if (User.IsInRole("customer"))
                 {
-                    <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="User" asp-action="Index">All orders</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="User" asp-action="Index">Всі замовлення</a></li>
                 }
             </ul>
             <ul class="navbar-nav ml-auto">
@@ -61,7 +61,7 @@
                         </li>
                     }
                         <li class="nav-item text-lowercase"><a class="nav-link" asp-area="" asp-controller="Account" asp-action="CustomerSettingPage">@User.Identity.Name</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Account" asp-action="LogOut">Log Out</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-area="" asp-controller="Account" asp-action="LogOut">Вийти</a></li>
                 }
             </ul>
         </div>
